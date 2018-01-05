@@ -1,0 +1,14 @@
+{
+  "input_file": "stage.txt",
+  "time_format": "%H:%M",
+  "time_separator": "-",
+  "date_separator": " ",
+  "stage": {
+    "active": true,
+    "CFU_needed": 15,
+    "CFU_hours": 25
+  },
+  "currency_simbol": "€",
+  "hour_pay": 10,
+  "hours_day_fulltime": 8
+}
