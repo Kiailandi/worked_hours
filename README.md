@@ -1,7 +1,7 @@
-# 💻 worked_hours ⌛
+# :computer: worked_hours :hourglass:
 A simple script to calculate the total number of hours worked (and money earned) based on a timetable.
 
-## Configuration file 🔧
+## Configuration file :wrench:
 
 The configuration can be passed to the script via a configuration file called `config.json`. An example can be found in this repo.
 
@@ -38,7 +38,7 @@ The configuration can be passed to the script via a configuration file called `c
 }
 ```
 
-## Input file ⏱
+## Input file :watch:
 
 Each line represents a frame of time, if you have multiple frames in a single day each one should be on a different line. An example can be found in this repo as `input.txt`.
 
@@ -52,7 +52,7 @@ Each line represents a frame of time, if you have multiple frames in a single da
 
 NB: ' ', ':', '-' are the date / time separators and are declared in the config file.
 
-## TODO (wip) 👷
+## TODO (wip) :construction:
 
 - [ ] Use better terms in config file
 - [ ] Add a check to avoid the same separator for different thing
