@@ -20,15 +20,16 @@ def main():
     FMT = config["time_format"]
 
     for line in inputfile:
-        tmp1 = line.split(config["date_separator"])
-        tmp2 = tmp1[1].split(config["time_separator"])
-        tdelta = datetime.strptime(tmp2[1].rstrip(), FMT) - datetime.strptime(tmp2[0].rstrip(), FMT)
-        worked_seconds = worked_seconds + tdelta.seconds
-        print ("Date: " + tmp1[0].rstrip())
-        print ("Start: " + tmp2[0].rstrip())
-        print ("End: " + tmp2[1].rstrip())
-        hours, minutes, seconds = convert_s_to_hms(tdelta.seconds)
-        print('You worked: ' + str(hours) + " hours and " + str(minutes) + " miutes \n")
+        if line.strip():
+            tmp1 = line.split(config["date_separator"])
+            tmp2 = tmp1[1].split(config["time_separator"])
+            tdelta = datetime.strptime(tmp2[1].rstrip(), FMT) - datetime.strptime(tmp2[0].rstrip(), FMT)
+            worked_seconds = worked_seconds + tdelta.seconds
+            print ("Date: " + tmp1[0].rstrip())
+            print ("Start: " + tmp2[0].rstrip())
+            print ("End: " + tmp2[1].rstrip())
+            hours, minutes, seconds = convert_s_to_hms(tdelta.seconds)
+            print('You worked: ' + str(hours) + " hours and " + str(minutes) + " miutes \n")
 
     inputfile.close()
 
@@ -48,7 +49,7 @@ def main():
         else:
             print("You finished your stage!")
     else:
-        print("You earned: " + config["currency_simbol"] + str(hours * config["hour_pay"] + minutes / 30 * config["hour_pay"] / 2) + ".")
+        print("You earned: " + config["currency_symbol"] + str(hours * config["hour_pay"] + minutes / 30 * config["hour_pay"] / 2) + ".")
 
 if __name__ == "__main__":
     main()
